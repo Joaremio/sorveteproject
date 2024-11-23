@@ -63,5 +63,9 @@ body, h1, h2, p, div, section {
     margin-bottom: 8px;
   }
   
-
+  .complement-options {
+    max-height: 150px; /* Altura máxima visível */
+    overflow-y: auto;  /* Adiciona um scrollbar vertical */
+  }
+  
   

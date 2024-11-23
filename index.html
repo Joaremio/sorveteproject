@@ -14,32 +14,55 @@
   <main>
     <!-- Seção do modelo de açaí e preços -->
     <section id="model">
-      <div class="prices">
-        <form>
-            <label>
-              <input type="radio" name="valor" value="10"> 10,00 R$
-            </label>
-            <label>
-              <input type="radio" name="valor" value="20"> 20,00 R$
-            </label>
-            <label>
-              <input type="radio" name="valor" value="30"> 30,00 R$
-            </label>
+        <div class="prices">
+          <form>
+            <label for="preco">Escolha o preço:</label>
+            <select id="preco" name="valor">
+              <option value="5">5,00 R$</option>
+              <option value="6">6,00 R$</option>
+              <option value="7">7,00 R$</option>
+              <option value="8">8,00 R$</option>
+              <option value="10">10,00 R$</option>
+              <option value="12">12,00 R$</option>
+              <option value="20">20,00 R$</option>
+            </select>
           </form>
-      </div>
-    </section>
+        </div>
+      </section>
+      
 
     <!-- Seção de seleção de complementos -->
     <section id="complements">
         <h2>Escolha seus complementos</h2>
         <div class="complement-options">
-          <label><input type="checkbox" value="Banana"> Banana</label>
-          <label><input type="checkbox" value="Granola"> Granola</label>
-          <label><input type="checkbox" value="Leite Condensado"> Leite Condensado</label>
-          <label><input type="checkbox" value="Leite Ninho"> Leite Ninho</label>
-          <label><input type="checkbox" value="Doce de Leite"> Doce de Leite</label>
-          <label><input type="checkbox" value="Brigadeiro"> Brigadeiro</label>
-          <label><input type="checkbox" value="Jujuba"> Jujuba</label>
+          <label><input type="checkbox" value="complemento"> Granola</label>
+          <label><input type="checkbox" value="complemento"> Leite Condensado</label>
+          <label><input type="checkbox" value="complemento"> Leite Ninho</label>
+          <label><input type="checkbox" value="complemento"> Doce de Leite</label>
+          <label><input type="checkbox" value="complemento"> Brigadeiro</label>
+          <label><input type="checkbox" value="complemento"> Jujuba</label>
+          <label><input type="checkbox" value="complemento"> Beijinho</label>
+          <label><input type="checkbox" value="complemento"> Recheio de Cookie</label>
+          <label><input type="checkbox" value="complemento"> Castanha</label>
+          <label><input type="checkbox" value="complemento"> Coco queimado</label>
+          <label><input type="checkbox" value="complemento"> Coco ralado</label>
+          <label><input type="checkbox" value="complemento"> Chocoboll Mini</label>
+          <label><input type="checkbox" value="complemento"> ChocoPower Boll</label>
+          <label><input type="checkbox" value="complemento"> Farinha Láctea</label>
+          <label><input type="checkbox" value="complemento"> Paçoca em pó</label>
+          <label><input type="checkbox" value="complemento"> Morango</label>
+          <label><input type="checkbox" value="complemento"> Ovo Maltine</label>
+          <label><input type="checkbox" value="complemento"> Gotas de Chocolate</label>
+          <label><input type="checkbox" value="complemento"> Fini</label>
+          <label><input type="checkbox" value="complemento"> Brigadeiro</label>
+          <label><input type="checkbox" value="complemento"> Bis</label>
+          <label><input type="checkbox" value="complemento"> Leite em pó</label>
+          <label><input type="checkbox" value="complemento"> Amendoim</label>
+          <label><input type="checkbox" value="complemento"> Cereja</label>
+          <label><input type="checkbox" value="complemento"> Banana</label>
+          <label><input type="checkbox" value="complemento"> Maça</label>
+          <label><input type="checkbox" value="complemento"> Uva</label>
+          <label><input type="checkbox" value="complemento"> Kiwi</label>
           <!-- Adicione mais opções aqui -->
         </div>
         <button id="finish-order" onclick="mostrar()">Finalizar Pedido</button>
