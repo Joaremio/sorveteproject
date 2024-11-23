@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sorveteria Açaí</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Escolha seu Açaí</h1>
+  </header>
+  
+  <main>
+    <!-- Seção do modelo de açaí e preços -->
+    <section id="model">
+      <div class="prices">
+        <form>
+            <label>
+              <input type="radio" name="valor" value="10"> 10,00 R$
+            </label>
+            <label>
+              <input type="radio" name="valor" value="20"> 20,00 R$
+            </label>
+            <label>
+              <input type="radio" name="valor" value="30"> 30,00 R$
+            </label>
+          </form>
+      </div>
+    </section>
+
+    <!-- Seção de seleção de complementos -->
+    <section id="complements">
+        <h2>Escolha seus complementos</h2>
+        <div class="complement-options">
+          <label><input type="checkbox" value="Banana"> Banana</label>
+          <label><input type="checkbox" value="Granola"> Granola</label>
+          <label><input type="checkbox" value="Leite Condensado"> Leite Condensado</label>
+          <label><input type="checkbox" value="Leite Ninho"> Leite Ninho</label>
+          <label><input type="checkbox" value="Doce de Leite"> Doce de Leite</label>
+          <label><input type="checkbox" value="Brigadeiro"> Brigadeiro</label>
+          <label><input type="checkbox" value="Jujuba"> Jujuba</label>
+          <!-- Adicione mais opções aqui -->
+        </div>
+        <button id="finish-order" onclick="mostrar()">Finalizar Pedido</button>
+
+        <div id="cu"></div>
+      </section>
+
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
