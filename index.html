@@ -1,75 +1,202 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sorveteria Açaí</title>
-  <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio do Restaurante</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>
-    <h1>Escolha seu Açaí</h1>
-  </header>
-  
-  <main>
-    <!-- Seção do modelo de açaí e preços -->
-    <section id="model">
-        <div class="prices">
-          <form>
-            <label for="preco">Escolha o preço:</label>
-            <select id="preco" name="valor">
-              <option value="5">5,00 R$</option>
-              <option value="6">6,00 R$</option>
-              <option value="7">7,00 R$</option>
-              <option value="8">8,00 R$</option>
-              <option value="10">10,00 R$</option>
-              <option value="12">12,00 R$</option>
-              <option value="20">20,00 R$</option>
+    <!-- Barra de Navegação -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">STATION 10</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                    <!-- Categorias principais -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="filtrarCategoria('Petiscos')">Petiscos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="filtrarCategoria('Caldo')">Caldos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="filtrarCategoria('Bebidas')">Bebidas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="filtrarCategoria('Espetinhos')">Espetinhos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="filtrarCategoria('Destiladas')">Destiladas</a>
+                    </li>
+                    <!-- Dropdown para categorias adicionais -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                            Mais Opções
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" onclick="filtrarCategoria('Lanche')">Lanches</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="filtrarCategoria('Refrigerantes')">Refrigerantes</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="filtrarCategoria('Combos')">Combos</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <h2 class="text-center">Escolha o Valor do Açaí</h2>
+        <div class="form-group">
+            <label for="valorAcai">Selecione o valor do Açaí:</label>
+            <select id="valorAcai" class="form-control" onchange="referencia(), adicionarTituloPedido(), zerarTodosItens()">
+                <option value="" disabled selected>Escolha o seu tamanho</option>
+                <option value="5">200ml, 2 CREMES, 2 COBERTURAS, 3 COMPLEMENTOS - R$ 05,00</option>
+                <option value="6">250ml, 2 CREMES, 2 COBERTURAS, 4 COMPLEMENTOS - R$ 06,00</option>
+                <option value="7">300ml, 2 CREMES, 2 COBERTURAS, 5 COMPLEMENTOS - R$ 07,00 </option>
+                <option value="8">400ml, 3 CREMES, 2 COBERTURAS, 7 COMPLEMENTOS - R$ 08,00</option>
+                <option value="10">500ml, 3 CREMES, 2 COBERTURAS, 8 COMPLEMENTOS - R$ 10,00</option>
+                <option value="12">700ml, 3 CREMES, 2 COBERTURAS, 10 COMPLEMENTOS - R$ 12,00</option>
+                <option value="20">LITRO, 4 CREMES, 2 COBERTURAS, 12 COMPLEMENTOS - R$ 20,00</option>
+                
             </select>
-          </form>
         </div>
-      </section>
+    </div>
       
+<!-- Carrossel de itens do cardápio 1 -->
+<div id="menu-carousel" class="carousel slide" data-ride="carousel">
+    <h1 style="color: yellow; font-size: 20px; text-align: center;">Cremes</h1>
+    <p style="text-align: center; font-size: 18px; color: yellow;" id="limiteCremes"></p>
+    <div class="carousel-inner" id="menu">
+        <!-- Itens do carrossel serão inseridos aqui dinamicamente -->
+    </div>
+    <a class="carousel-control-prev" href="#menu-carousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Anterior</span>
+    </a>
+    <a class="carousel-control-next" href="#menu-carousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Próximo</span>
+    </a>
+</div>
 
-    <!-- Seção de seleção de complementos -->
-    <section id="complements">
-        <h2>Complementos</h2>
-        <div class="complement-options">
-          <label><input type="checkbox" value="complemento"> Granola</label>
-          <label><input type="checkbox" value="complemento"> Leite Condensado</label>
-          <label><input type="checkbox" value="complemento"> Leite Ninho</label>
-          <label><input type="checkbox" value="complemento"> Doce de Leite</label>
-          <label><input type="checkbox" value="complemento"> Brigadeiro</label>
-          <label><input type="checkbox" value="complemento"> Jujuba</label>
-          <label><input type="checkbox" value="complemento"> Beijinho</label>
-          <label><input type="checkbox" value="complemento"> Recheio de Cookie</label>
-          <label><input type="checkbox" value="complemento"> Castanha</label>
-          <label><input type="checkbox" value="complemento"> Coco queimado</label>
-          <label><input type="checkbox" value="complemento"> Coco ralado</label>
-          <label><input type="checkbox" value="complemento"> Chocoboll Mini</label>
-          <label><input type="checkbox" value="complemento"> ChocoPower Boll</label>
-          <label><input type="checkbox" value="complemento"> Farinha Láctea</label>
-          <label><input type="checkbox" value="complemento"> Paçoca em pó</label>
-          <label><input type="checkbox" value="complemento"> Morango</label>
-          <label><input type="checkbox" value="complemento"> Ovo Maltine</label>
-          <label><input type="checkbox" value="complemento"> Gotas de Chocolate</label>
-          <label><input type="checkbox" value="complemento"> Fini</label>
-          <label><input type="checkbox" value="complemento"> Brigadeiro</label>
-          <label><input type="checkbox" value="complemento"> Bis</label>
-          <label><input type="checkbox" value="complemento"> Leite em pó</label>
-          <label><input type="checkbox" value="complemento"> Amendoim</label>
-          <label><input type="checkbox" value="complemento"> Cereja</label>
-          <label><input type="checkbox" value="complemento"> Banana</label>
-          <label><input type="checkbox" value="complemento"> Maça</label>
-          <label><input type="checkbox" value="complemento"> Uva</label>
-          <label><input type="checkbox" value="complemento"> Kiwi</label>
-          <!-- Adicione mais opções aqui -->
+<!-- Carrossel de itens do cardápio 2 -->
+<div id="menu-carousel-2" class="carousel slide" data-ride="carousel">
+    <h1 style="color: yellow; font-size: 20px; text-align: center;" id="complementos">Complementos</h1>
+    <p style="text-align: center; font-size: 18px; color: yellow;" id="limite"></p>
+    <div class="carousel-inner" id="menu2"> 
+        <!-- Itens do carrossel serão inseridos aqui dinamicamente -->
+    </div>
+    <a class="carousel-control-prev" href="#menu-carousel-2" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Anterior</span>
+    </a>
+    <a class="carousel-control-next" href="#menu-carousel-2" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Próximo</span>
+    </a>
+</div>
+
+<div id="menu-carousel-3" class="carousel slide" data-ride="carousel">
+    <h1 style="color: yellow; font-size: 20px; text-align: center;">Caldas</h1>
+    <p style="text-align: center; font-size: 18px; color: yellow;" id="limiteCaldas"></p>
+    <div class="carousel-inner" id="menu3">
+        <!-- Itens do carrossel serão inseridos aqui dinamicamente -->
+    </div>
+    <a class="carousel-control-prev" href="#menu-carousel-3" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Anterior</span>
+    </a>
+    <a class="carousel-control-next" href="#menu-carousel-3" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Próximo</span>
+    </a>
+</div>
+ 
+ 
+
+  
+
+<!-- Seção de pedidos -->
+<div id="pedido" class="mt-5 container">
+    <div class="row">
+        <!-- Campos de preenchimento à esquerda -->
+        <div class="col-md-6">
+            <h3>Informações do Pedido</h3>
+            
+            <!-- Nome do Cliente -->
+            <div class="form-group mt-3">
+                <label for="nomeCliente">Cliente:</label>
+                <input type="text" id="nomeCliente" class="form-control" placeholder="Digite seu nome" required>
+            </div>
+            
+            <!-- Número da Mesa -->
+            <div class="form-group">
+                <label for="numeroMesa">Mesa:</label>
+                <input type="text" id="numeroMesa" class="form-control" placeholder="Digite o número da mesa" required>
+            </div>
+
+            <!-- Checkbox para pedido em casa -->
+    <div class="form-group mt-3">
+    <input type="checkbox" id="pedidoEmCasa" onclick="toggleEndereco(); exibirTaxaEntrega();">
+    <label for="pedidoEmCasa">Entrega em casa</label>
+    <!-- Texto pequeno para taxa de entrega -->
+    <p id="textoTaxaEntrega" style="display: none; font-size: 0.8em; color: black; margin-top: 5px; font-weight: bolder;">A taxa para entrega é de R$ 3,00.</p>
+    </div>
+
+            <!-- Campos de endereço (ocultos por padrão) -->
+            <div id="enderecoCliente" style="display: none;">
+                <div class="form-group mt-3">
+                    <label for="ruaCliente">Rua:</label>
+                    <input type="text" id="ruaCliente" class="form-control" placeholder="Digite o nome da rua">
+                </div>
+                <div class="form-group">
+                    <label for="numeroEndereco">Número:</label>
+                    <input type="text" id="numeroEndereco" class="form-control" placeholder="Digite o número">
+                </div>
+                <div class="form-group mt-3">
+                    <label for="complemento">Ponto de referência:</label>
+                    <input type="text" id="complemento" class="form-control" placeholder="Digite um ponto de referência">
+                </div>
+            </div>
         </div>
-      </section>
 
+        <!-- Resumo do pedido à direita -->
+        <div class="col-md-6">
+            <h3>Pedidos solicitados</h3>
+            <p id="AcaiSelecionado"></p>
+            <h6 id="cremes-describe"></h6>
+            <ul id="lista-cremes" class="list-group"></ul>
+            <h6 id="complements-describe"></h6>
+            <ul id="lista-complementos" class="list-group"></ul>
+            <h6 id="caldas-describe"></h6>
+            <ul id="lista-caldas" class="list-group"></ul>
+            <ul id="lista-pedido" class="list-group">
+            
+                <!-- Itens selecionados vão aparecer aqui -->
+            </ul>
+        </div>
+    </div>
 
-  </main>
+    <!-- Linha para o botão de enviar, fica centralizado abaixo da seção em telas menores -->
+    <div class="row">
+        <div class="col-12 text-center mt-3">
+            <button class="btn btn-primary" onclick="enviarPedido()">Solicitar Pedido</button>
+        </div>
+    </div>
+</div>
 
-  <script src="script.js"></script>
+    <!-- Scripts do Bootstrap, jQuery e Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
