@@ -1,322 +1,251 @@
-/* Reset básico */
-body, h1, h2, p, div, section {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-  }
-  
-  /* Estilos do header */
-  header {
-    background-color: #6200ea;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-  }
-  
-  /* Modelo de açaí */
-  #acai-image {
-    max-width: 100%;
-    display: block;
-    margin: 0 auto;
-  }
-  
-  /* Preços */
-  .prices {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-  
-  .price-button {
-    padding: 1rem;
-    background-color: #6200ea;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .price-button:hover {
-    background-color: #3700b3;
-  }
-  
-  /* Complementos */
-  #complements {
-    padding: 2rem;
-    background-color: #fff;
-    margin-top: 2rem;
-    border-radius: 8px;
-    max-width: 300px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .complement-options label{
-    display: block;
-    margin-bottom: 8px;
-  }
-  
-  .complement-options {
-    margin-top: 20px;
-    max-height: 160px; /* Altura máxima visível */
-    overflow-y: auto;  /* Adiciona um scrollbar vertical */
-  }
-  
-  body {
-    background-color: black !important; 
-    color: #000000; 
-    font-family: 'Lobster', sans-serif !important;
+body {
+  background-color: black !important; 
+  color: #000000; 
+  font-family: 'Lobster', sans-serif !important;
 }
 
 #nomeCliente {
-    max-width: 300px;
+  max-width: 300px;
 }
 
 #numeroMesa {
-    max-width: 300px;
+  max-width: 300px;
 }
 
 .bola {
-    background-color: deeppink;
+  background-color: deeppink;
 }
 
 .card {
-    height: 360px; /* Deixe a altura automática para acomodar o conteúdo */
-    margin: 10px; /* Centraliza o card dentro da coluna */
-    width: 200px;
-    flex-direction: column; /* Alinha o conteúdo verticalmente */
-    background-color: #f9d71c; /* Amarelo suave */
-    border: 3px solid #f9d71c !important; /* Borda preta */
-    border-radius: 8px; /* Borda arredondada */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animações */
+  height: 360px; /* Deixe a altura automática para acomodar o conteúdo */
+  margin: 10px; /* Centraliza o card dentro da coluna */
+  width: 200px;
+  flex-direction: column; /* Alinha o conteúdo verticalmente */
+  background-color: #f9d71c; /* Amarelo suave */
+  border: 3px solid #f9d71c !important; /* Borda preta */
+  border-radius: 8px; /* Borda arredondada */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animações */
 }
 .card:hover {
-    transform: translateY(-5px); /* Leve elevação ao passar o mouse */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra mais intensa ao passar o mouse */
+  transform: translateY(-5px); /* Leve elevação ao passar o mouse */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra mais intensa ao passar o mouse */
 }
 
 .card-body {
-    display: flex; /* Usar flexbox para o corpo do card */
-    flex-direction: column; /* Direção vertical */
-    flex-grow: 1; /* Faz o card-body ocupar o espaço disponível */
-    padding: 10px;
-    background-color:  #fde910;
-    border: solid 4px black;
-    border-radius: 8px;
+  display: flex; /* Usar flexbox para o corpo do card */
+  flex-direction: column; /* Direção vertical */
+  flex-grow: 1; /* Faz o card-body ocupar o espaço disponível */
+  padding: 10px;
+  background-color:  #fde910;
+  border: solid 4px black;
+  border-radius: 8px;
 
 }
 
 .card-title {
-    font-size: 1.25rem; /* Tamanho da fonte do título */
-    color: #000000; /* Texto preto */
-    margin-top: 10px;
-    margin-bottom: 2px;
-    flex-grow: 1; /* Permite que o título ocupe o espaço restante */
+  font-size: 1.25rem; /* Tamanho da fonte do título */
+  color: #000000; /* Texto preto */
+  margin-top: 10px;
+  margin-bottom: 2px;
+  flex-grow: 1; /* Permite que o título ocupe o espaço restante */
 }
 
 .card-text {
-    font-size: 1rem; /* Tamanho da fonte do texto */
-    background-color: black;
-    color: #fde910;
-    font-weight: bolder;
+  font-size: 1rem; /* Tamanho da fonte do texto */
+  background-color: black;
+  color: #fde910;
+  font-weight: bolder;
 }
 
 
 .card-img-top{
-    display: flex;
-    height: 180px;
-    width: 100%;
-    object-fit: cover;
-    border-top: solid 5px black !important;
-    border-left: solid 5px black !important;
-    border-right: solid 5px black !important;
-    border-radius: 8px;
+  display: flex;
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
+  border-top: solid 5px black !important;
+  border-left: solid 5px black !important;
+  border-right: solid 5px black !important;
+  border-radius: 8px;
 }
 
 
- #pedido {
-    background-color: #f8f9fa;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    margin: auto;
+#pedido {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: auto;
 }
 
 #pedido h3 {
-    font-size: 1.5rem;
-    color: #333;
+  font-size: 1.5rem;
+  color: #333;
 }
 
 #lista-pedido {
-    max-height: 300px;
-    overflow-y: auto;
+  max-height: 300px;
+  overflow-y: auto;
 }
 
 .btn-primary:hover {
-    background-color: #0056b3; /* Tom de azul um pouco mais escuro */
-    transition: 0.3s;
-    transform: scale(1.05);
+  background-color: #0056b3; /* Tom de azul um pouco mais escuro */
+  transition: 0.3s;
+  transform: scale(1.05);
 }
 
 
 
 .navbar .nav-link {
-    color: white  !important; /* Cor do texto dos links */
-    background-color: #343a40 !important;
+  color: white  !important; /* Cor do texto dos links */
+  background-color: #343a40 !important;
 }
 
 .navbar .nav-link:hover {
-    color: #FFD700 !important; /* Cor do texto ao passar o mouse */
+  color: #FFD700 !important; /* Cor do texto ao passar o mouse */
 }
 
 .navbar .navbar-brand {
-    color: white !important; /* Cor do texto da marca */
-    background-color: #343a40 !important;
+  color: white !important; /* Cor do texto da marca */
+  background-color: #343a40 !important;
 }
 
 .navbar .navbar-brand:hover {
-    color: #FFD700 !important; /* Cor do texto da marca ao passar o mouse */
+  color: #FFD700 !important; /* Cor do texto da marca ao passar o mouse */
 }
 
 
 .container-fluid{
-    background-color: #343a40 !important;
+  background-color: #343a40 !important;
 }
 
 .btn-primary {
-    margin-bottom: 5px; /* Ajuste para melhorar o espaçamento */
-    background-color: black !important;
-    
+  margin-bottom: 5px; /* Ajuste para melhorar o espaçamento */
+  background-color: black !important;
+  
 }
 
 #pedido {
-    background-color: #f9d71c;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    max-width: 700px;
-    margin: auto;
+  background-color: #f9d71c;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  margin: auto;
 }
 
 #pedido h3 {
-    font-size: 1.5rem;
-    color: #333;
+  font-size: 1.5rem;
+  color: #333;
 }
 
 #lista-pedido {
-    max-height: 300px;
-    overflow-y: auto;
+  max-height: 300px;
+  overflow-y: auto;
 }
 
 .btn-primary {
-    font-size: 1rem;
-    padding: 10px 20px;
-    color: #f9d71c !important;
-    font-weight: bolder;
+  font-size: 1rem;
+  padding: 10px 20px;
+  color: #f9d71c !important;
+  font-weight: bolder;
 }
 
 #boti{
-    margin-top: auto; /* Empurra o botão para o final do card */
-    background-color: black;
-    color: #f9d71c;
-    font-weight: bold;
+  margin-top: auto; /* Empurra o botão para o final do card */
+  background-color: black;
+  color: #f9d71c;
+  font-weight: bold;
 }
 
 #pedido {
-    background-color: #f9d71c;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-    margin: auto;
+  background-color: #f9d71c;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: auto;
 }
 
 #lista-pedido {
-    max-height: 300px;
-    overflow-y: auto;
-    border: 1px solid #ddd;
-    padding: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 10px;
 }
 
 #menu-carousel-2{
-    margin-top: 50px;
+  margin-top: 50px;
 }
 @media (max-width: 576px) { /* Para telas pequenas */
-    .carousel-item {
-        display: flex;
-        width: 100%;
-        justify-content: center;
-    }
+  .carousel-item {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+  }
 
-    .card-title {
-        font-size: 0.5rem; /* Tamanho da fonte do título reduzido */
-        font-weight: bolder;
-        width: 50px;
-        display: flex;
-        justify-content: center;
-    }
+  .card-title {
+      font-size: 0.5rem; /* Tamanho da fonte do título reduzido */
+      font-weight: bolder;
+      width: 50px;
+      display: flex;
+      justify-content: center;
+  }
 
-    .card-text {
-        font-size: 0.5rem; /* Tamanho da fonte do texto reduzido */
-    }
+  .card-text {
+      font-size: 0.5rem; /* Tamanho da fonte do texto reduzido */
+  }
 
-    .btn {
-        font-size: 0.1rem; /* Tamanho do botão reduzido */
-    }
+  .btn {
+      font-size: 0.1rem; /* Tamanho do botão reduzido */
+  }
 
-    .card {
-        height: 250px; /* Deixa a altura automática para evitar sobreposição */
-        width: 100px; /* Ocupa toda a largura disponível */
-        display: flex;
-        justify-content: space-between;
-    }
+  .card {
+      height: 250px; /* Deixa a altura automática para evitar sobreposição */
+      width: 100px; /* Ocupa toda a largura disponível */
+      display: flex;
+      justify-content: space-between;
+  }
 
-    .card-img-top{
-        height: 90px;
-    }
+  .card-img-top{
+      height: 90px;
+  }
 
-    #boti{
-        font-size: .45rem;
-        font-weight: bolder;
-        margin-top: auto;
-        width: auto;
-        display: flex;
-        padding: 7px;
-        justify-content: center;
+  #boti{
+      font-size: .45rem;
+      font-weight: bolder;
+      margin-top: auto;
+      width: auto;
+      display: flex;
+      padding: 7px;
+      justify-content: center;
 
 
-    }
+  }
 
-    #logu{
-        width: 100%;
-        height: auto;
-    }
-    #pedido h3 {
-        font-size: 1rem;
-    }
-    .form-control {
-        font-size: 0.7rem;
-    }
-    #lista-pedido .list-group-item {
-        font-size: 0.85rem;
-    }
-    .btn-primary {
-        font-size: 0.9rem;
-        padding: 8px 16px;
-        width: 100%; /* Ocupa toda a largura disponível em telas pequenas */
-    }
-    #pedido{
-        max-width: 80%;
-        max-height: auto;
-    }
+  #logu{
+      width: 100%;
+      height: auto;
+  }
+  #pedido h3 {
+      font-size: 1rem;
+  }
+  .form-control {
+      font-size: 0.7rem;
+  }
+  #lista-pedido .list-group-item {
+      font-size: 0.85rem;
+  }
+  .btn-primary {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+      width: 100%; /* Ocupa toda a largura disponível em telas pequenas */
+  }
+  #pedido{
+      max-width: 80%;
+      max-height: auto;
+  }
 }
 
