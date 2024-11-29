@@ -319,7 +319,7 @@ function exibirMenuCategoria(categoria, containerId) {
 
       // Cria uma linha para conter até 4 cartões
       const row = document.createElement('div');
-      row.className = "row justify-content-center";
+      row.className = "row justify-content-center g-5";
 
       itensFiltrados.slice(i, i + 3).forEach(item => {
           const itemDiv = document.createElement('div');
@@ -328,8 +328,8 @@ function exibirMenuCategoria(categoria, containerId) {
               <div class="card">
                   <img src="${item.imagem}" class="card-img-top" alt="${item.nome}">
                   <div class="card-body text-center">
-                      <h5 class="card-title">${item.nome}</h5>
-                      <button class="btn btn-primary btn-sm" onclick="adicionarAoPedido('${item.nome}')">Adicionar</button>
+                      <h5 class="title">${item.nome}</h5>
+                      <button class="btn btn-primary btn-sm" id="boti" onclick="adicionarAoPedido('${item.nome}')">Adicionar</button>
                   </div>
               </div>
           `;
