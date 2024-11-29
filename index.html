@@ -11,47 +11,6 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <!-- Barra de Navegação -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">STATION 10</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
-                    <!-- Categorias principais -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="filtrarCategoria('Petiscos')">Petiscos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="filtrarCategoria('Caldo')">Caldos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="filtrarCategoria('Bebidas')">Bebidas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="filtrarCategoria('Espetinhos')">Espetinhos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" onclick="filtrarCategoria('Destiladas')">Destiladas</a>
-                    </li>
-                    <!-- Dropdown para categorias adicionais -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                            Mais Opções
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#" onclick="filtrarCategoria('Lanche')">Lanches</a></li>
-                            <li><a class="dropdown-item" href="#" onclick="filtrarCategoria('Refrigerantes')">Refrigerantes</a></li>
-                            <li><a class="dropdown-item" href="#" onclick="filtrarCategoria('Combos')">Combos</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
     <div class="container mt-4">
         <h2 class="text-center">Escolha o Valor do Açaí</h2>
         <div class="form-group">
@@ -72,7 +31,7 @@
       
 <!-- Carrossel de itens do cardápio 1 -->
 <div id="menu-carousel" class="carousel slide" data-ride="carousel">
-    <h1 class="CarrosselTitulos" style="color: yellow; font-size: 20px; text-align: center; margin-right: 80px;">Cremes</h1>
+    <h1 class="CarrosselTitulos" style="color: #FF6F61; font-size: 20px; text-align: center; margin-right: 80px; font-weight: bolder;">CREMES</h1>
     <p style="text-align: center; font-size: 18px; color: yellow;" id="limiteCremes"></p>
     <div class="carousel-inner" id="menu">
         <!-- Itens do carrossel serão inseridos aqui dinamicamente -->
@@ -89,8 +48,8 @@
 
 <!-- Carrossel de itens do cardápio 2 -->
 <div id="menu-carousel-2" class="carousel slide" data-ride="carousel">
-    <h1  class="CarrosselTitulos" style="color: yellow; font-size: 20px; text-align: center; margin-right: 80px;" id="complementos">Complementos</h1>
-    <p style="text-align: center; font-size: 18px; color: yellow;" id="limite"></p>
+    <h1  class="CarrosselTitulos" style="color: #FF6F61; font-size: 20px; font-weight: bolder; text-align: center; margin-right: 80px;" id="complementos">COMPLEMENTOS</h1>
+    <p style="text-align: center; font-size: 18px; color: #FF6F61;" id="limite"></p>
     <div class="carousel-inner" id="menu2"> 
         <!-- Itens do carrossel serão inseridos aqui dinamicamente -->
     </div>
@@ -105,8 +64,8 @@
 </div>
 
 <div id="menu-carousel-3" class="carousel slide" data-ride="carousel">
-    <h1  class="CarrosselTitulos" style="color: yellow; font-size: 20px; text-align: center; margin-right: 80px;">Caldas</h1>
-    <p style="text-align: center; font-size: 18px; color: yellow;" id="limiteCaldas"></p>
+    <h1  class="CarrosselTitulos" style="color: #FF6F61; font-size: 20px; font-weight:bolder; text-align: center; margin-right: 80px;">CALDAS</h1>
+    <p style="text-align: center; font-size: 18px; color: #FF6F61;" id="limiteCaldas"></p>
     <div class="carousel-inner" id="menu3">
         <!-- Itens do carrossel serão inseridos aqui dinamicamente -->
     </div>

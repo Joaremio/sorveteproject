@@ -1,7 +1,8 @@
 body {
-  background-color: black !important; 
-  color: #000000; 
-  font-family: 'Lobster', sans-serif !important;
+  background-color: #bd7bc8 !important;
+  background-repeat: repeat; /* Faz o fundo se repetir */
+  background-size: auto; /* Ajusta o tamanho automaticamente */
+  background-position: center; /* Centraliza a posição do fundo */
 }
 
 #nomeCliente {
@@ -23,7 +24,7 @@ body {
   width: 200px;
   flex-direction: column; /* Alinha o conteúdo verticalmente */
   background-color: #f9d71c; /* Amarelo suave */
-  border: 3px solid #f9d71c !important; /* Borda preta */
+  border: 3px solid #F8BBD0 !important; /* Borda preta */
   border-radius: 8px; /* Borda arredondada */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animações */
@@ -38,7 +39,7 @@ body {
   flex-direction: column; /* Direção vertical */
   flex-grow: 1; /* Faz o card-body ocupar o espaço disponível */
   padding: 10px;
-  background-color:  #fde910;
+  background-color: #F8BBD0;
   justify-content: center;
 
 }
@@ -151,9 +152,10 @@ body {
 
 #boti{
   margin-top: auto !important; /* Empurra o botão para o final do card */
-  background-color: black;
-  color: #f9d71c;
+  background-color: #bbd8bc !important;
+  color: #F5F5F5 !important;
   font-weight: bold;
+  border-color:#bbd8bc !important
 }
 
 #pedido {
@@ -174,6 +176,10 @@ body {
 
 #menu-carousel-2{
   margin-top: 10px;
+}
+.title{
+  color: #FF6F61;
+  font-weight: bolder;
 }
 
 

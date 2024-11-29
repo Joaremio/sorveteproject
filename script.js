@@ -12,7 +12,7 @@ const menuItems = [
   { nome: "CREME DE AVELÃ COM CACAU", categoria: "Cremes", imagem: "css/logo.jpeg" },
   { nome: "CREME DE OREO", categoria: "Cremes", imagem: "css/logo.jpeg" },
   { nome: "CALDA DE CHOCOLATE", categoria: "Caldas", imagem: "css/logo.jpeg" },
-  { nome: "CALDA DE MORANGO", categoria: "Caldas", imagem: "css/logo.jpeg" },
+  { nome: "CALDA DE MORANGO", categoria: "Caldas", imagem: "css/logo.png" },
   { nome: "CALDA DE AMORA", categoria: "Caldas", imagem: "css/logo.jpeg" },
   { nome: "CALDA DE BLUICE", categoria: "Caldas", imagem: "css/logo.jpeg" },
   { nome: "CALDA DE LEITE CONDENSADO", categoria: "Caldas", imagem: "css/logo.jpeg" },
