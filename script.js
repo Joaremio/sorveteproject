@@ -489,8 +489,8 @@ function zerarTodosItens() {
 }
 
 
-
 document.getElementById("next").addEventListener("click", mudaCarosel);
+document.getElementById("prev").addEventListener("click", voltaCarosel); // Evento para o botão "Voltar"
 
 // Array com os carrosséis
 let carrosseis = [
@@ -509,7 +509,7 @@ let indiceAtual = 0; // Índice para controlar o carrossel atual
 
 // Inicializa os carrosséis, escondendo todos exceto o primeiro
 carrosseis.forEach((carrossel, index) => {
-    carrossel.style.display = index === 0 ? "block" : "none"; // Exibe o primeiro e esconde os outros
+    carrosseis[index].style.display = index === 0 ? "block" : "none"; // Exibe o primeiro e esconde os outros
     if (index === 0) {
         // Exibe os itens da primeira categoria
         exibirMenuCategoria(indicesMenus[index].categoria, indicesMenus[index].menuId);
@@ -528,4 +528,38 @@ function mudaCarosel() {
     
     // Exibe os itens para a categoria correspondente ao novo carrossel
     exibirMenuCategoria(indicesMenus[indiceAtual].categoria, indicesMenus[indiceAtual].menuId);
+    
+    // Altera o botão para "Finalizar" no último carrossel
+    if (indiceAtual === carrosseis.length - 1) {  // Verifica se chegou no último carrossel (Caldas)
+        document.getElementById("next").textContent = "FINALIZAR";
+        document.getElementById("next").removeEventListener("click", mudaCarosel); // Remove o ouvinte de evento anterior
+        document.getElementById("next").addEventListener("click", finalizarPedido); // Adiciona o ouvinte de evento para finalizar
+    } else {
+        // Volta o botão para "Próximo" caso não esteja no último carrossel
+        document.getElementById("next").textContent = "PRÓXIMO";
+        document.getElementById("next").removeEventListener("click", finalizarPedido); // Remove o ouvinte de evento anterior
+        document.getElementById("next").addEventListener("click", mudaCarosel); // Adiciona o ouvinte de evento para o próximo carrossel
+    }
+}
+
+function voltaCarosel() {
+    // Esconde o carrossel atual
+    carrosseis[indiceAtual].style.display = "none";
+    
+    // Diminui o índice para o carrossel anterior
+    indiceAtual = (indiceAtual - 1 + carrosseis.length) % carrosseis.length; // Faz o índice voltar ao último carrossel quando chegar ao começo
+    
+    // Exibe o carrossel anterior
+    carrosseis[indiceAtual].style.display = "block";
+    
+    // Exibe os itens para a categoria correspondente ao novo carrossel
+    exibirMenuCategoria(indicesMenus[indiceAtual].categoria, indicesMenus[indiceAtual].menuId);
+}
+
+function finalizarPedido(event) {
+    // Impede o comportamento padrão de clique
+    event.preventDefault();
+    
+    // Redireciona para a página de finalização de pedido
+    window.location.href = "pagina_finalizacao.html";  // Substitua "pagina_finalizacao.html" pela URL de sua página de finalização
 }
