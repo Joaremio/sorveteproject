@@ -1,25 +1,26 @@
 
 const menuItems = [
-  { nome: "CREME DE AÇAI", categoria: "Cremes", imagem:"css/logo.jpeg" }, 
-  { nome: "CREME DE CUPUAÇU", categoria: "Cremes", imagem: "css/logo.jpeg" },
-  { nome: "CREME DE NINHO", categoria: "Cremes", imagem: "css/logo.jpeg" },
-  { nome: "CREME DE NINHO", categoria: "Cremes", imagem: "css/logo.jpeg" },
-  { nome: "CREME TRUFADO", categoria: "Cremes", imagem: "css/logo.jpeg" },
-  { nome: "CREME MALTINE", categoria: "Cremes", imagem: "css/logo.jpeg" },
-  { nome: "CREME DE MORANGO", categoria: "Cremes", imagem: "css/logo.jpeg" },
+  { nome: "CREME DE AÇAI", categoria: "Cremes", imagem:"css/açai.jpeg" }, 
+  { nome: "CREME DE CUPUAÇU", categoria: "Cremes", imagem: "css/cupuaçu.png" },
+  { nome: "CREME DE NINHO", categoria: "Cremes", imagem: "css/ninho.jpg" },
   { nome: "CREME DE TAPIOCA", categoria: "Cremes", imagem: "css/logo.jpeg" },
-  { nome: "CREME DE AMENDOIM", categoria: "Cremes", imagem: "css/logo.jpeg" },
-  { nome: "CREME DE AVELÃ COM CACAU", categoria: "Cremes", imagem: "css/logo.jpeg" },
-  { nome: "CREME DE OREO", categoria: "Cremes", imagem: "css/logo.jpeg" },
-  { nome: "CALDA DE CHOCOLATE", categoria: "Caldas", imagem: "css/logo.jpeg" },
-  { nome: "CALDA DE MORANGO", categoria: "Caldas", imagem: "css/logo.png" },
-  { nome: "CALDA DE AMORA", categoria: "Caldas", imagem: "css/logo.jpeg" },
-  { nome: "CALDA DE BLUICE", categoria: "Caldas", imagem: "css/logo.jpeg" },
-  { nome: "CALDA DE LEITE CONDENSADO", categoria: "Caldas", imagem: "css/logo.jpeg" },
-  { nome: "CALDA DE MENTA", categoria: "Caldas", imagem: "css/logo.jpeg" },
-  { nome: "CALDA DE UVA", categoria: "Caldas", imagem: "css/logo.jpeg" },
-  { nome: "CALDA DE CARAMELO", categoria: "Caldas", imagem: "css/logo.jpeg" },
-  { nome: "CALDA DE KIWI", categoria: "Caldas", imagem: "css/logo.jpeg" },
+  { nome: "CREME DE AMENDOIM", categoria: "Cremes", imagem: "css/amendoim.png" },
+  { nome: "CREME DE AVELÃ COM CACAU", categoria: "Cremes", imagem: "css/avelã_cacau.jpg" },
+  { nome: "CREME DE OREO", categoria: "Cremes", imagem: "css/oreo.jpeg" },
+  { nome: "CREME TRUFADO", categoria: "Cremes", imagem: "css/trufado.jpg" },
+  { nome: "CREME MALTINE", categoria: "Cremes", imagem: "css/maltine.jpg" },
+  { nome: "CREME DE MORANGO", categoria: "Cremes", imagem: "css/morango.webp" },
+  { nome: "CALDA DE CHOCOLATE", categoria: "Caldas", imagem: "css/calda_chocolate.jpg" },
+  { nome: "CALDA DE MORANGO", categoria: "Caldas", imagem: "css/calda_morango.jpg" },
+  { nome: "CALDA DE AMORA", categoria: "Caldas", imagem: "css/calda_amora.jpg" },
+  { nome: "CALDA DE BLUICE", categoria: "Caldas", imagem: "css/calda_bluice.webp" },
+  { nome: "CALDA DE BLUICE", categoria: "Caldas", imagem: "css/calda_bluice.webp" },
+  { nome: "CALDA DE LEITE CONDENSADO", categoria: "Caldas", imagem: "css/calda_leite.jpg" },
+  { nome: "CALDA DE MENTA", categoria: "Caldas", imagem: "css/menta.jpg" },
+  { nome: "CALDA DE UVA", categoria: "Caldas", imagem: "css/calda_uva.jpg" },
+  { nome: "CALDA DE KIWI", categoria: "Caldas", imagem: "css/calda_kiwi.webp" },
+  { nome: "CALDA DE KIWI", categoria: "Caldas", imagem: "css/calda_kiwi.webp" },
+  { nome: "CALDA DE CARAMELO", categoria: "Caldas", imagem: "css/calda_caramelo.webp" },
   { nome: "DOCE DE LEITE", categoria: "Complementos", imagem: "css/logo.jpeg" },
   { nome: "BEIJINHO", categoria: "Complementos", imagem: "css/logo.jpeg" },
   { nome: "RECHEIO DE COOKIE", categoria: "Complementos", imagem: "css/logo.jpeg" },
@@ -342,8 +343,8 @@ function exibirMenuCategoria(categoria, containerId) {
 
 // Exibe os menus para cada categoria
 exibirMenuCategoria("Cremes", "menu");
-exibirMenuCategoria("Complementos", "menu2");
-exibirMenuCategoria("Caldas", "menu3");
+//exibirMenuCategoria("Complementos", "menu2");
+//exibirMenuCategoria("Caldas", "menu3");
 
 
  
@@ -488,3 +489,43 @@ function zerarTodosItens() {
 }
 
 
+
+document.getElementById("next").addEventListener("click", mudaCarosel);
+
+// Array com os carrosséis
+let carrosseis = [
+    document.getElementById("menu-carousel"),
+    document.getElementById("menu-carousel-2"),
+    document.getElementById("menu-carousel-3")
+];
+
+let indicesMenus = [
+    { categoria: "Cremes", menuId: "menu" }, 
+    { categoria: "Complementos", menuId: "menu2" }, 
+    { categoria: "Caldas", menuId: "menu3" }
+];
+
+let indiceAtual = 0; // Índice para controlar o carrossel atual
+
+// Inicializa os carrosséis, escondendo todos exceto o primeiro
+carrosseis.forEach((carrossel, index) => {
+    carrossel.style.display = index === 0 ? "block" : "none"; // Exibe o primeiro e esconde os outros
+    if (index === 0) {
+        // Exibe os itens da primeira categoria
+        exibirMenuCategoria(indicesMenus[index].categoria, indicesMenus[index].menuId);
+    }
+});
+
+function mudaCarosel() {
+    // Esconde o carrossel atual
+    carrosseis[indiceAtual].style.display = "none";
+    
+    // Aumenta o índice para o próximo carrossel
+    indiceAtual = (indiceAtual + 1) % carrosseis.length; // Faz o índice voltar ao 0 quando chegar no final
+    
+    // Exibe o próximo carrossel
+    carrosseis[indiceAtual].style.display = "block";
+    
+    // Exibe os itens para a categoria correspondente ao novo carrossel
+    exibirMenuCategoria(indicesMenus[indiceAtual].categoria, indicesMenus[indiceAtual].menuId);
+}
