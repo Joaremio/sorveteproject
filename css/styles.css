@@ -191,6 +191,35 @@ body {
   display: none;
 }
 
+#next {
+  background-color: #4CAF50; /* Cor de fundo verde */
+  color: white; /* Texto branco */
+  padding: 10px 20px; /* Espaçamento interno */
+  font-size: 16px; /* Tamanho da fonte */
+  border: none; /* Sem borda */
+  border-radius: 5px; /* Bordas arredondadas */
+  cursor: pointer; /* Cursor em formato de mão ao passar sobre o botão */
+  transition: background-color 0.3s ease; /* Efeito de transição na cor do fundo */
+  margin-left: 580px;
+}
+
+#next:hover {
+  background-color: #45a049; /* Cor do fundo quando o mouse passa por cima */
+}
+
+#next:active {
+  background-color: #397d3d; /* Cor do fundo quando o botão é pressionado */
+}
+
+#next:focus {
+  outline: none; /* Remove o contorno de foco padrão */
+}
+
+#volte{
+  margin-left: 140px;
+  margin-top: 70px;
+}
+
 
 
 
@@ -284,5 +313,17 @@ body {
   .CarrosselTitulos{
     margin-left: 70px;
   }
+
+  #next{
+    margin-left: 130px;
+  }
+
+  #volte{
+    margin-left: 30px;
+    margin-top: 20px;
+
+  }
+
+  
 }
 
