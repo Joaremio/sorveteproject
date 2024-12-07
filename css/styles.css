@@ -11,8 +11,8 @@ body {
 }
 
 .colorTitle{
-  background-color: #FFF7AE; color: #4B0082;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para destaque */
+  background-color: #FFF7AE; color: #FF007F;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 #numeroMesa {
