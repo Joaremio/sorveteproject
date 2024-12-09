@@ -158,8 +158,8 @@ body {
 
 #boti{
   margin-top: auto !important; /* Empurra o botão para o final do card */
-  background-color: #AEEAFD !important;
-  color: #F5F5F5 !important;
+  background-color: #fea9c8 !important;
+  color: #ffffff !important;
   font-weight: bold;
   border-color:#bbd8bc !important;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
@@ -278,7 +278,7 @@ body {
       margin-top: auto;
       width: auto;
       display: flex;
-      padding: 7px;
+      padding: 5px;
       justify-content: center;
 
 
@@ -311,7 +311,7 @@ body {
     gap: 15px;
 }
   .title {
-  font-size: 0.5rem; /* Tamanho do texto */
+  font-size: 7px; /* Tamanho do texto */
   width: 100%; /* Largura do contêiner */
   white-space: normal; /* Permite quebra de linha automática */
   word-wrap: break-word; /* Quebra a palavra se for muito longa */
@@ -346,7 +346,7 @@ body {
   }
 
   #limiteComplementos{
-    margin-left: 120px !important;
+    margin-left: 125px !important;
     font-size: 18px !important;
   }
   #limite{
