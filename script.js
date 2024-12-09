@@ -61,6 +61,15 @@ const menuItems = [
 let pedidos = {};  // Objeto que vai armazenar os pedidos por cliente
 
 function adicionarAoPedido(nome) {
+
+
+    const valorAcai = document.getElementById("valorAcai").value;
+    if (!valorAcai) {
+      // Exibe um alerta caso não tenha valor selecionado
+      alert("Por favor, selecione o valor do antes de adicionar itens ao pedido.");
+      return; // Impede a execução do código abaixo
+    }
+
   const item = menuItems.find(i => i.nome === nome);
 
   if (pedidos[nome]) {
