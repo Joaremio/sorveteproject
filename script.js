@@ -561,12 +561,27 @@ function voltaCarosel() {
     
     // Exibe os itens para a categoria correspondente ao novo carrossel
     exibirMenuCategoria(indicesMenus[indiceAtual].categoria, indicesMenus[indiceAtual].menuId);
+    
+    // Verifica se o índice atual é o último carrossel, alterando o botão para "Finalizar"
+    if (indiceAtual === carrosseis.length - 1) {
+        document.getElementById("next").textContent = "FINALIZAR";
+        document.getElementById("next").removeEventListener("click", mudaCarosel); // Remove o ouvinte de evento de mudar para o próximo
+        document.getElementById("next").addEventListener("click", finalizarPedido); // Adiciona o ouvinte de evento de finalizar pedido
+    } else {
+        // Volta o botão para "Próximo" caso não esteja no último carrossel
+        document.getElementById("next").textContent = "PRÓXIMO";
+        document.getElementById("next").removeEventListener("click", finalizarPedido); // Remove o ouvinte de evento de finalizar
+        document.getElementById("next").addEventListener("click", mudaCarosel); // Adiciona o ouvinte de evento para o próximo carrossel
+    }
 }
 
 function finalizarPedido(event) {
     // Impede o comportamento padrão de clique
     event.preventDefault();
     
-    // Redireciona para a página de finalização de pedido
-    window.location.href = "pagina_finalizacao.html";  // Substitua "pagina_finalizacao.html" pela URL de sua página de finalização
+    // Aqui você pode exibir a seção de pedidos
+    document.getElementById("pedido").scrollIntoView({ behavior: "smooth" });
+
+    // Ou se preferir, pode redirecionar para outra página:
+    // window.location.href = "pagina_finalizacao.html";  // Substitua pela URL da sua página de finalização
 }
