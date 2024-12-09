@@ -166,12 +166,16 @@ body {
 }
 
 #pedido {
-  background-color: #f9d71c;
+  background-color: #fea9c8;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   max-width: 800px;
   margin: auto;
+}
+#enviar{
+  background-color: #FF007F !important;
+  color: white !important;
 }
 
 #lista-pedido {
@@ -187,6 +191,11 @@ body {
 .title{
   color:#FF007F;
   text-shadow: 2px 2px 4px #D9A88E;
+  font-weight: bolder;
+}
+
+.textColor{
+  color: #ffffff !important;
   font-weight: bolder;
 }
 

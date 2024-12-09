@@ -94,7 +94,7 @@
     <div class="row">               
         <!-- Campos de preenchimento à esquerda -->
         <div class="col-md-6">
-            <h3>SEU PEDIDO</h3>
+            <h3 class="textColor">SEU PEDIDO</h3>
             <h6 id="AcaiSelecionado"></h6>
             <h6 id="cremes-describe"></h6>
             <ul id="lista-cremes" class="list-group"></ul>
@@ -109,8 +109,8 @@
         </div>
 
            <!-- Resumo do pedido à direita -->
-        <div class="col-md-6">
-            <h3>Preencha seus dados</h3>
+        <div class="col-md-6 textColor">
+            <h3 class="textColor">Preencha seus dados</h3>
             
             <!-- Nome do Cliente -->
             <div class="form-group mt-3">
@@ -129,7 +129,7 @@
     <input type="checkbox" id="pedidoEmCasa" onclick="toggleEndereco(); exibirTaxaEntrega();">
     <label for="pedidoEmCasa">Entrega em casa</label>
     <!-- Texto pequeno para taxa de entrega -->
-    <p id="textoTaxaEntrega" style="display: none; font-size: 0.8em; color: black; margin-top: 5px; font-weight: bolder;">A taxa para entrega é de R$ 3,00.</p>
+    <p id="textoTaxaEntrega"   style="display: none; font-size: 0.8em; color:black; margin-top: 5px; ">A taxa para entrega é de R$ 3,00.</p>
     </div>
 
             <!-- Campos de endereço (ocultos por padrão) -->
@@ -153,7 +153,7 @@
     <!-- Linha para o botão de enviar, fica centralizado abaixo da seção em telas menores -->
     <div class="row">
         <div class="col-12 text-center mt-3">
-            <button class="btn btn-primary" onclick="enviarPedido()">Solicitar Pedido</button>
+            <button class="btn btn-primary" id="enviar" onclick="enviarPedido()">Solicitar Pedido</button>
         </div>
     </div>
 </div>
