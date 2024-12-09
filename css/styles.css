@@ -30,7 +30,7 @@ body {
   width: 200px;
   flex-direction: column; /* Alinha o conteúdo verticalmente */
   background-color: #f9d71c; /* Amarelo suave */
-  border: 3px solid #F8BBD0 !important; /* Borda preta */
+  border: 3px solid #FFF7AE !important; /* Borda preta */
   border-radius: 8px; /* Borda arredondada */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidade */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animações */
@@ -45,7 +45,7 @@ body {
   flex-direction: column; /* Direção vertical */
   flex-grow: 1; /* Faz o card-body ocupar o espaço disponível */
   padding: 10px;
-  background-color: #F8BBD0;
+  background-color: #FFF7AE;
   justify-content: center;
 
 }
@@ -158,10 +158,11 @@ body {
 
 #boti{
   margin-top: auto !important; /* Empurra o botão para o final do card */
-  background-color: #bbd8bc !important;
+  background-color: #AEEAFD !important;
   color: #F5F5F5 !important;
   font-weight: bold;
-  border-color:#bbd8bc !important
+  border-color:#bbd8bc !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #pedido {
@@ -184,21 +185,20 @@ body {
   margin-top: 10px;
 }
 .title{
-  color: #FF6F61;
+  color:#FF007F;
+  text-shadow: 2px 2px 4px #D9A88E;
   font-weight: bolder;
 }
 
-#menu-carousel {
-  display: block;
-}
 
+#menu-carousel,
 #menu-carousel-2,
 #menu-carousel-3 {
   display: none;
 }
 
 #next {
-  background-color: #4CAF50; /* Cor de fundo verde */
+  background-color: #FF007F; /* Cor de fundo verde */
   color: white; /* Texto branco */
   padding: 10px 20px; /* Espaçamento interno */
   font-size: 16px; /* Tamanho da fonte */
@@ -210,11 +210,11 @@ body {
 }
 
 #next:hover {
-  background-color: #45a049; /* Cor do fundo quando o mouse passa por cima */
+  background-color: #af095c; /* Cor do fundo quando o mouse passa por cima */
 }
 
 #next:active {
-  background-color: #397d3d; /* Cor do fundo quando o botão é pressionado */
+  background-color: #FF007F; /* Cor do fundo quando o botão é pressionado */
 }
 
 #next:focus {
@@ -225,6 +225,15 @@ body {
   margin-left: 140px;
   margin-top: 70px;
 }
+
+.CarrosselTitulos{
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-left: 43%;
+}
+
 
 
 
@@ -316,9 +325,6 @@ body {
   margin-right: 30px !important;
   height: 100%; /* Certifique-se de que a altura do contêiner seja consistente */
 }
-  .CarrosselTitulos{
-    margin-left: 70px;
-  }
 
   #next{
     margin-left: 130px;
@@ -329,7 +335,25 @@ body {
     margin-top: 20px;
 
   }
-
   
+  #limiteCremes{
+    margin-left: 130px !important;
+  }
+  #cremesTitle{
+    margin-left: 150px !important;
+  }
+
+  #limiteComplementos{
+    margin-left: 110px !important;
+  }
+  #limite{
+    margin-left: 130px !important;
+  }
+  #limiteCaldas{
+    margin-left: 130px !important;
+  }
+  #titleCaldas{
+    margin-left: 160px !important;
+  }
 }
 
