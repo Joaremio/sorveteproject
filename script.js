@@ -248,97 +248,99 @@ function atualizarEstadoBotoes(categoria) {
 
 // Função para enviar o pedido via WhatsApp
 function enviarPedido() {
-  const AcaiSelecionado = document.getElementById('AcaiSelecionado').value;
-  const nomeCliente = document.getElementById('nomeCliente').value;
-  const numeroMesa = document.getElementById('numeroMesa').value;
-  const pedidoEmCasa = document.getElementById('pedidoEmCasa').checked;
-  const enderecoCliente = document.getElementById('ruaCliente').value;
-  const complemento = document.getElementById('complemento').value; // Complemento (ponto de referência)
-  const numeroCliente = Number(document.getElementById('numeroEndereco').value);
-
-  // Validação para "pedido em casa"
-  if (pedidoEmCasa) {
+    const AcaiSelecionado = document.getElementById('AcaiSelecionado').value; // Açaí selecionado
+    const nomeCliente = document.getElementById('nomeCliente').value;
+    const numeroMesa = document.getElementById('numeroMesa').value;
+    const pedidoEmCasa = document.getElementById('pedidoEmCasa').checked;
+    const enderecoCliente = document.getElementById('ruaCliente').value;
+    const complemento = document.getElementById('complemento').value; // Complemento (ponto de referência)
+    const numeroCliente = Number(document.getElementById('numeroEndereco').value);
+  
+    // Validação para "pedido em casa"
+    if (pedidoEmCasa) {
       if (!nomeCliente) {
-          alert("Digite o seu nome");
-          return;
+        alert("Digite o seu nome");
+        return;
       } else if (!enderecoCliente || !numeroCliente) {
-          alert("Digite o endereço completo (rua e número)");
-          return;
+        alert("Digite o endereço completo (rua e número)");
+        return;
       }
-  } else {
+    } else {
       // Validação para "pedido no restaurante"
       if (!nomeCliente) {
-          alert("Digite o seu nome");
-          return;
+        alert("Digite o seu nome");
+        return;
       } else if (!numeroMesa) {
-          alert("Digite o número da mesa");
-          return;
+        alert("Digite o número da mesa");
+        return;
       }
-  }
-
-  if (Object.keys(pedidos).length === 0) {
+    }
+  
+    if (Object.keys(pedidos).length === 0) {
       alert("Adicione pelo menos um item ao pedido.");
       return;
-  }
-
-  // Criar um resumo do pedido
-  let resumoPedido = "";
-  let valorTotal = parseFloat(document.getElementById("valorAcai").value);
-
-  if (pedidoEmCasa) {
+    }
+  
+    // Criar um resumo do pedido
+    let resumoPedido = "";
+    let valorTotal = parseFloat(document.getElementById("valorAcai").value);
+  
+    if (pedidoEmCasa) {
       resumoPedido += `*PEDIDO PARA ENTREGA*\n\n*Cliente:* ${nomeCliente}\n*Endereço:* ${enderecoCliente}, Nº ${numeroCliente}`;
       if (complemento) { // Adiciona o complemento se ele existir
-          resumoPedido += `\n*Ponto de referência:* ${complemento}`;
+        resumoPedido += `\n*Ponto de referência:* ${complemento}`;
       }
-      resumoPedido += `\n*Taxa de entrega: R$ 3.00*\n\nItens:\n`;
-
+      resumoPedido += `\n*Taxa de entrega: R$ 3.00*\n\n*Itens:*\n`;
+  
       // Adiciona o valor da taxa de entrega ao total
       valorTotal += 3.00;
-  } else {
-      resumoPedido += `*PEDIDO NO RESTAURANTE*\n\n*Cliente:* ${nomeCliente}\n*Mesa:* ${numeroMesa}\n\nItens:\n`;
-  }
-
-  // Divisões por categoria
-  let complementos = [];
-  let cremes = [];
-  let caldas = [];
-
-  // Divida os itens selecionados por categoria
-  Object.keys(pedidos).forEach(item => {
+    } else {
+      resumoPedido += `*PEDIDO NO RESTAURANTE*\n\n*Cliente:* ${nomeCliente}\n*Mesa:* ${numeroMesa}\n\n*Itens:*\n`;
+    }
+  
+    // Adiciona o açaí selecionado ao resumo
+    resumoPedido += `\n*Açaí Selecionado:* ${AcaiSelecionado}\n`;
+  
+    // Divisões por categoria
+    let complementos = [];
+    let cremes = [];
+    let caldas = [];
+  
+    // Divida os itens selecionados por categoria
+    Object.keys(pedidos).forEach(item => {
       const itemInfo = pedidos[item];
-      const valorItem = itemInfo.quantidade * itemInfo.preco;
-      
+  
       // Organize os itens por categoria
       if (itemInfo.categoria === "Complementos") {
-          complementos.push(`${item}`);
+        complementos.push(item);
       } else if (itemInfo.categoria === "Cremes") {
-          cremes.push(`${item}`);
+        cremes.push(item);
       } else if (itemInfo.categoria === "Caldas") {
-          caldas.push(`${item}`);
+        caldas.push(item);
       }
-  });
-
-  // Adiciona as divisões ao resumo
-  if (cremes.length > 0) {
-    resumoPedido += `\n*CREMES:*\n${cremes.join("\n")}\n`;
-    }
-  if (complementos.length > 0) {
-      resumoPedido += `\n*COMPLEMENTOS:*\n${complementos.join("\n")}\n`;
-  }
-  if (caldas.length > 0) {
-      resumoPedido += `\n*CALDAS:*\n${caldas.join("\n")}\n`;
-  }
-
-  resumoPedido += `\n*Total: R$ ${valorTotal.toFixed(2)}*`;
-
-  // Formatar a mensagem para o WhatsApp
-  const mensagem = encodeURIComponent(resumoPedido);
-  const numeroWhatsApp = "5584991164038"; 
-  const url = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
+    });
   
-  window.open(url, '_blank');
-}
-
+    // Adiciona as divisões ao resumo
+    if (cremes.length > 0) {
+      resumoPedido += `\n*CREMES:*\n${cremes.join("\n")}`;
+    }
+    if (complementos.length > 0) {
+      resumoPedido += `\n*COMPLEMENTOS:*\n${complementos.join("\n")}`;
+    }
+    if (caldas.length > 0) {
+      resumoPedido += `\n*CALDAS:*\n${caldas.join("\n")}`;
+    }
+  
+    resumoPedido += `\n\n*Total: R$ ${valorTotal.toFixed(2)}*`;
+  
+    // Formatar a mensagem para o WhatsApp
+    const mensagem = encodeURIComponent(resumoPedido);
+    const numeroWhatsApp = "5584991164038";
+    const url = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
+  
+    window.open(url, '_blank');
+  }
+  
 
 // Função genérica para exibir itens do menu como carrossel com base na categoria
 function exibirMenuCategoria(categoria, containerId) {
