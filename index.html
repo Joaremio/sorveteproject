@@ -94,15 +94,15 @@
     <div class="row">               
         <!-- Campos de preenchimento à esquerda -->
         <div class="col-md-6">
-            <h3 class="textColor">SEU PEDIDO</h3>
-            <h6 id="AcaiSelecionado"></h6>
-            <h6 id="cremes-describe"></h6>
-            <ul id="lista-cremes" class="list-group"></ul>
-            <h6 id="complements-describe"></h6>
-            <ul id="lista-complementos" class="list-group"></ul>
-            <h6 id="caldas-describe"></h6>
-            <ul id="lista-caldas" class="list-group"></ul>
-            <ul id="lista-pedido" class="list-group">
+            <h3 class="textColor pedidoTitle">SEU PEDIDO</h3>
+            <h6 id="AcaiSelecionado" class="pedidoTitle textColor"></h6>
+            <h6 id="cremes-describe" class="textColor"></h6>
+            <ul id="lista-cremes" class="list-group textList"></ul>
+            <h6 id="complements-describe" class="textColor"></h6>
+            <ul id="lista-complementos" class="list-group textList"></ul>
+            <h6 id="caldas-describe" class="textColor"></h6>
+            <ul id="lista-caldas" class="list-group textList"></ul>
+            <ul id="lista-pedido" class="list-group textList">
             
                 <!-- Itens selecionados vão aparecer aqui -->
             </ul>
@@ -110,7 +110,7 @@
 
            <!-- Resumo do pedido à direita -->
         <div class="col-md-6 textColor">
-            <h3 class="textColor">Preencha seus dados</h3>
+            <h3 class="textColor pedidoTitle">Preencha seus dados</h3>
             
             <!-- Nome do Cliente -->
             <div class="form-group mt-3">
@@ -129,7 +129,7 @@
     <input type="checkbox" id="pedidoEmCasa" onclick="toggleEndereco(); exibirTaxaEntrega();">
     <label for="pedidoEmCasa">Entrega em casa</label>
     <!-- Texto pequeno para taxa de entrega -->
-    <p id="textoTaxaEntrega"   style="display: none; font-size: 0.8em; color:black; margin-top: 5px; ">A taxa para entrega é de R$ 3,00.</p>
+    <p id="textoTaxaEntrega"   style="display: none; font-size: 0.8em; color:#FF007F; background-color: #fea9c8; text-align: center; margin-top: 5px; ">A taxa para entrega é de R$ 3,00.</p>
     </div>
 
             <!-- Campos de endereço (ocultos por padrão) -->

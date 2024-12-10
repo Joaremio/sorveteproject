@@ -166,7 +166,7 @@ body {
 }
 
 #pedido {
-  background-color: #fea9c8;
+  background-color: #FFF7AE;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -195,10 +195,18 @@ body {
 }
 
 .textColor{
-  color: #ffffff !important;
+  color: #FF007F !important;
   font-weight: bolder;
 }
+.textList{
+  color: #fea9c8;
+  font-weight: bolder;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
 
+.pedidoTitle{
+  text-align: center;
+}
 
 #menu-carousel,
 #menu-carousel-2,
