@@ -248,7 +248,7 @@ function atualizarEstadoBotoes(categoria) {
 
 // Função para enviar o pedido via WhatsApp
 function enviarPedido() {
-    const AcaiSelecionado = document.getElementById('AcaiSelecionado').value; // Açaí selecionado
+    const AcaiSelecionado = document.getElementById('valorAcai').value; // Açaí selecionado
     const nomeCliente = document.getElementById('nomeCliente').value;
     const numeroMesa = document.getElementById('numeroMesa').value;
     const pedidoEmCasa = document.getElementById('pedidoEmCasa').checked;
@@ -295,11 +295,11 @@ function enviarPedido() {
       // Adiciona o valor da taxa de entrega ao total
       valorTotal += 3.00;
     } else {
-      resumoPedido += `*PEDIDO NO RESTAURANTE*\n\n*Cliente:* ${nomeCliente}\n*Mesa:* ${numeroMesa}\n\n*Itens:*\n`;
+      resumoPedido += `*PEDIDO*\n\n*Cliente:* ${nomeCliente}\n*Mesa:* ${numeroMesa}`;
     }
   
     // Adiciona o açaí selecionado ao resumo
-    resumoPedido += `\n*Açaí Selecionado:* ${AcaiSelecionado}\n`;
+    resumoPedido += `\n*Açaí Selecionado:* ${AcaiSelecionado}\n \n\n*Itens:*\n`;
   
     // Divisões por categoria
     let complementos = [];
@@ -322,13 +322,13 @@ function enviarPedido() {
   
     // Adiciona as divisões ao resumo
     if (cremes.length > 0) {
-      resumoPedido += `\n*CREMES:*\n${cremes.join("\n")}`;
+      resumoPedido += `\n*CREMES:*\n\n${cremes.join("\n")}`;
     }
     if (complementos.length > 0) {
-      resumoPedido += `\n*COMPLEMENTOS:*\n${complementos.join("\n")}`;
+      resumoPedido += `\n\n*COMPLEMENTOS:*\n${complementos.join("\n")}`;
     }
     if (caldas.length > 0) {
-      resumoPedido += `\n*CALDAS:*\n${caldas.join("\n")}`;
+      resumoPedido += `\n\n*CALDAS:*\n${caldas.join("\n")}`;
     }
   
     resumoPedido += `\n\n*Total: R$ ${valorTotal.toFixed(2)}*`;
