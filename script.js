@@ -310,20 +310,20 @@ function enviarPedido() {
       
       // Organize os itens por categoria
       if (itemInfo.categoria === "Complementos") {
-          complementos.push(`${item} (x${itemInfo.quantidade}) - R$ ${valorItem.toFixed(2)}`);
+          complementos.push(`${item}`);
       } else if (itemInfo.categoria === "Cremes") {
-          cremes.push(`${item} (x${itemInfo.quantidade}) - R$ ${valorItem.toFixed(2)}`);
+          cremes.push(`${item}`);
       } else if (itemInfo.categoria === "Caldas") {
-          caldas.push(`${item} (x${itemInfo.quantidade}) - R$ ${valorItem.toFixed(2)}`);
+          caldas.push(`${item}`);
       }
   });
 
   // Adiciona as divisões ao resumo
-  if (complementos.length > 0) {
-      resumoPedido += `\n\n*COMPLEMENTOS:*\n${complementos.join("\n")}\n`;
-  }
   if (cremes.length > 0) {
-      resumoPedido += `\n*CREMES:*\n${cremes.join("\n")}\n`;
+    resumoPedido += `\n*CREMES:*\n${cremes.join("\n")}\n`;
+    }
+  if (complementos.length > 0) {
+      resumoPedido += `\n*COMPLEMENTOS:*\n${complementos.join("\n")}\n`;
   }
   if (caldas.length > 0) {
       resumoPedido += `\n*CALDAS:*\n${caldas.join("\n")}\n`;
