@@ -248,7 +248,9 @@ function atualizarEstadoBotoes(categoria) {
 
 // Função para enviar o pedido via WhatsApp
 function enviarPedido() {
-    const AcaiSelecionado = document.getElementById('valorAcai').value; // Açaí selecionado
+    const selectElement = document.getElementById('valorAcai');
+    const selectedOption = selectElement.options[selectElement.selectedIndex];
+    const optionText = selectedOption.text;
     const nomeCliente = document.getElementById('nomeCliente').value;
     const numeroMesa = document.getElementById('numeroMesa').value;
     const pedidoEmCasa = document.getElementById('pedidoEmCasa').checked;
@@ -299,7 +301,7 @@ function enviarPedido() {
     }
   
     // Adiciona o açaí selecionado ao resumo
-    resumoPedido += `\n*Açaí Selecionado:* ${AcaiSelecionado}\n \n\n*Itens:*\n`;
+    resumoPedido += `\n*Açaí Selecionado:* ${optionText}\n \n\n*Itens:*\n`;
   
     // Divisões por categoria
     let complementos = [];
