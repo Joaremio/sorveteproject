@@ -121,13 +121,12 @@ function limitar() {
   const preco = document.getElementById("valorAcai").value;
 
   const limitesPorPreco = {
-      "5": { cremes: 2, complementos: 3, caldas: 2 },
-      "6": { cremes: 2, complementos: 4, caldas: 2 },
-      "7": { cremes: 2, complementos: 5, caldas: 2 },
-      "8": { cremes: 3, complementos: 7, caldas: 2 },
-      "10": { cremes: 3, complementos: 8, caldas: 2 },
-      "12": { cremes: 3, complementos: 10, caldas: 2 },
-      "20": { cremes: 4, complementos: 12, caldas: 2 },
+      "7": { cremes: 2, complementos: 4, caldas: 2 },
+      "8": { cremes: 2, complementos: 5, caldas: 2 },
+      "10": { cremes: 3, complementos: 6, caldas: 3 },
+      "15": { cremes: 3, complementos: 7, caldas: 3},
+      "20": { cremes: 4, complementos: 8, caldas: 4 },
+      "30": { cremes: 5, complementos: 10, caldas: 4 },
   };
 
   return limitesPorPreco[preco] || { cremes: 0, complementos: 0, caldas: 0 }; // Limite padrão caso preço inválido
@@ -394,26 +393,24 @@ function textinho(){
   let texto = "";
 
   switch(preco) {
-      case "5":
-          texto = "(selecione até 3)";
-          break;
-      case "6":
+
+      case "7":
           texto = "(selecione até 4)";
           break;
-      case "7":
+      case "8":
           texto = "(selecione até 5)";
           break;
-      case "8":
+      case "10":
+          texto = "(selecione até 6)";
+          break;
+      case "15":
           texto = "(selecione até 7)";
           break;
-      case "10":
+      case "20":
           texto = "(selecione até 8)";
           break;
-      case "12":
+      case "30":
           texto = "(selecione até 10)";
-          break;
-      case "20":
-          texto = "(selecione até 12)";
           break;
       default:
           texto = "(preço inválido)";
@@ -433,7 +430,9 @@ function referencia() {
   limite.innerHTML = "";
   const textoCreme = textCreme();
   limite.innerText = textoCreme;
-  limiteCaldas.innerText = "(selecione até 2)"
+  limiteCaldas.innerText = ""
+  const textoCobertura = textCoberturas();
+  limiteCaldas.innerText = textoCobertura;
 
 }
 
@@ -442,26 +441,24 @@ function textCreme(){
   let texto = "";
 
   switch(preco) {
-      case "5":
-          texto = "(selecione até 2)";
-          break;
-      case "6":
-          texto = "(selecione até 2)";
-          break;
+ 
       case "7":
           texto = "(selecione até 2)";
           break;
       case "8":
-          texto = "(selecione até 3)";
+          texto = "(selecione até 2)";
           break;
       case "10":
           texto = "(selecione até 3)";
           break;
-      case "12":
+      case "15":
           texto = "(selecione até 3)";
           break;
       case "20":
           texto = "(selecione até 4)";
+          break;
+      case "30":
+          texto = "(selecione até 5)";
           break;
       default:
           texto = "(preço inválido)";
@@ -471,6 +468,39 @@ function textCreme(){
   return texto;
 
 }
+
+function textCoberturas(){
+    const preco = document.getElementById("valorAcai").value;
+    let texto = "";
+  
+    switch(preco) {
+   
+        case "7":
+            texto = "(selecione até 2)";
+            break;
+        case "8":
+            texto = "(selecione até 2)";
+            break;
+        case "10":
+            texto = "(selecione até 3)";
+            break;
+        case "15":
+            texto = "(selecione até 3)";
+            break;
+        case "20":
+            texto = "(selecione até 4)";
+            break;
+        case "30":
+            texto = "(selecione até 4)";
+            break;
+        default:
+            texto = "(preço inválido)";
+            break;
+    }
+  
+    return texto;
+  
+  }
 
 function adicionarTituloPedido(){
   const selectElement = document.getElementById('valorAcai');
