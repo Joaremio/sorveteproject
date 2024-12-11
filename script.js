@@ -71,7 +71,6 @@ const menuItems = [
     { nome: "KIWI", categoria: "Complementos", imagem: "css/kiwi.jpg" },
     { nome: "FANTASMA", categoria: "Complementos", imagem: "css/fantasma.jpg" },
     { nome: "ABACAXI", categoria: "Complementos", imagem: "css/abacai.jpeg" },
-    { nome: "FANTASMA", categoria: "Complementos", imagem: "css/fantasma.jpg" },
     { nome: "MORANGO", categoria: "Complementos", imagem: "css/moranga.jpeg" },
 
   ];
