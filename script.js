@@ -320,6 +320,39 @@ function enviarPedido() {
   // Adiciona o açaí selecionado ao resumo
   resumoPedido += `\n*Açaí Selecionado:* ${optionText}\n\n*Tipo:* ${tipoPedidoSelecionado.toUpperCase()}\n \n\n*Itens:*\n`;
 
+
+    // Divisões por categoria
+    let complementos = [];
+    let cremes = [];
+    let caldas = [];
+
+    // Divida os itens selecionados por categoria
+    Object.keys(pedidos).forEach(item => {
+        const itemInfo = pedidos[item];
+
+        // Organize os itens por categoria
+        if (itemInfo.categoria === "Complementos") {
+            complementos.push(item);
+        } else if (itemInfo.categoria === "Cremes") {
+            cremes.push(item);
+        } else if (itemInfo.categoria === "Caldas") {
+            caldas.push(item);
+        }
+    });
+
+    // Adiciona as divisões ao resumo
+    if (cremes.length > 0) {
+        resumoPedido += `\n*CREMES:*\n\n${cremes.join("\n")}`;
+    }
+    if (complementos.length > 0) {
+        resumoPedido += `\n\n*COMPLEMENTOS:*\n${complementos.join("\n")}`;
+    }
+    if (caldas.length > 0) {
+        resumoPedido += `\n\n*CALDAS:*\n${caldas.join("\n")}`;
+    }
+
+    resumoPedido += `\n\n*Total: R$ ${valorTotal.toFixed(2)}*`
+
   // Formatar a mensagem para o WhatsApp
   const mensagem = encodeURIComponent(resumoPedido);
   const numeroWhatsApp = "5584991164038";
