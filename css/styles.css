@@ -330,12 +330,12 @@ body {
     gap: 15px;
 }
   .title {
-  font-size: 7px; /* Tamanho do texto */
+  font-size: 7.5px; /* Tamanho do texto */
   width: 100%; /* Largura do contêiner */
   white-space: normal; /* Permite quebra de linha automática */
   word-wrap: break-word; /* Quebra a palavra se for muito longa */
   word-break: break-word; /* Força quebra se necessário */
-  margin-top: 10px; /* Espaço entre o topo e o texto */
+  margin-top: 8px; /* Espaço entre o topo e o texto */
   position: relative;
   text-align: center; /* Centraliza horizontalmente */
   display: flex;
@@ -373,7 +373,7 @@ body {
     font-size: 16px !important;
   }
   #titleCaldas{
-    margin-left: 160px !important;
+    margin-left: 150px !important;
     font-size: 18px !important;
   }
 
