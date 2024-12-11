@@ -281,8 +281,8 @@ body {
   }
 
   .card {
-      height: 150px; /* Deixa a altura automática para evitar sobreposição */
-      width: 90px; /* Ocupa toda a largura disponível */
+      height: 160px; /* Deixa a altura automática para evitar sobreposição */
+      width: 99px; /* Ocupa toda a largura disponível */
       display: flex;
       justify-content: space-between;
   }
@@ -343,6 +343,7 @@ body {
   justify-content: center; /* Centraliza horizontalmente */
   margin-right: 30px !important;
   height: 100%; /* Certifique-se de que a altura do contêiner seja consistente */
+  margin-bottom: 15px !important;
 }
 
   #volte{
