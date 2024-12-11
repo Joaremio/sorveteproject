@@ -354,7 +354,7 @@ function enviarPedido() {
 
   // Formatar a mensagem para o WhatsApp
   const mensagem = encodeURIComponent(resumoPedido);
-  const numeroWhatsApp = "5584991164038";
+  const numeroWhatsApp = "5584992077888";
   const url = `https://wa.me/${numeroWhatsApp}?text=${mensagem}`;
 
   window.open(url, '_blank');
